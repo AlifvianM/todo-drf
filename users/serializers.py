@@ -57,8 +57,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     def get_token(self, instance):
         tok, created = Token.objects.get_or_create(user=instance)
-        self.token = tok.key
-        return self.token
+        return tok.key
 
 
     class Meta:
